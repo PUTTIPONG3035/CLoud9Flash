@@ -1,0 +1,119 @@
+
+.Container{
+    width: 100%;
+    padding-bottom: 10%;
+}
+.Tilte-box{
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-top: 3%;
+    padding-bottom: 1%;
+    background-color: #3498DB;
+    font-size: 2rem;
+    font-weight: 500;
+    color: #333;
+}
+.Tilte-input{
+    padding: 10px;
+    width: 100%;
+    background-color: #3498DB;
+    border: none;
+    font-size: 2rem;
+    font-weight: 500;
+    color: #333;
+}
+.Detail-input{
+    padding: 10px;
+    width: 100%;
+    height: max-content;
+    background-color: #3498DB;
+    border: none;
+    font-size: 1rem;
+    color: #333;
+    resize: none;
+}
+.Flash-container{
+    width: 80%;
+    margin: 0 auto;
+    /* background: #ccf; */
+    padding-bottom: 20%;
+}
+.Input{
+    background-color: #f2f2f2;
+}
+.Add-item{
+    border-radius: 50%;
+    border: none;
+    background: #000;
+    color: #fff;
+    font-weight: 900;
+    width: 2rem;
+    height: 2rem;
+    font-size: 1.5rem;
+    align-items: center;
+    margin: 10px;
+    cursor: pointer;
+}
+table{
+    border-collapse: collapse;
+    width: 100% auto;
+    text-align: center;
+}
+th{
+    font-size: 2rem;
+    padding-top: 10px;
+}
+tr, td{
+    padding: 10px;
+    padding-right: 20px;
+}
+.Vocab-input{
+    padding: 10px;
+    width: 100%;
+    background-color: #ECF0F1;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: #333;
+}
+.Trans-input{
+    padding: 10px;
+    width: 100%;
+    background-color: #ECF0F1;
+    border: none;
+    border-radius: 10px 10px 0px 0px;
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: #333;
+}
+.Vocab-input:focus, .Trans-input:focus{
+    border: 1px #34495E solid;
+    background-color: #2FCC7188;
+}
+.Upload-file{
+    width: 100% ;
+    background-color: #34495E;
+    display: inline-block;
+    padding: 10px 10px;
+    background-color: #34495E;
+    color: white;
+    border: none;
+    border-radius: 0px 0px 20px 20px;
+    cursor: pointer;
+    font-size: 16px;
+}
+.Upload-file:hover {
+    background-color: #4A545E;
+}
+.Button{
+    border-radius: 10px;
+    padding: 10px;
+    border: none;
+    /* background: #F39C13; */
+    font-size: 1.5rem;
+    margin-top: 10px;
+    cursor: pointer;
+    /* position: absolute; */
+    /* right: 10%; */
+}

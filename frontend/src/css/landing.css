@@ -1,0 +1,13 @@
+nav{
+    background-color: #1E1E1E;
+    width: 100%;
+    height: 50px;
+    padding: 20px 0px 10px 20px;
+    position: relative;
+}
+.HowToPlay{
+    color: #ECF0F1;
+}
+.ShortCut{
+    width: 80%;
+}
