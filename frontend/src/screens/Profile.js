@@ -1,14 +1,34 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import flash from '../image/image 7.png';
 import logo from '../image/logoflash.png';
 import axios from 'axios'
+import { useNavigate } from 'react-router-dom';
 
 
 function Profile() {
+      const navigate = useNavigate();
+    
+    const [number, setNumber] = useState("");
+    const [name, setName] = useState("");
+    const [role, setRole] = useState("");
+    
+    const logout = () =>{
+        // To delete an item from localStorage
+      localStorage.removeItem('token');
+       navigate('/');
+
+    }
 
 
     useEffect(() => {
-        axios.get("http://localhost:3000").then(res => console.log(res))
+        axios.get("http://54.237.35.150:3000").then(res => {
+            console.log(res.data.data[0].id)
+            console.log(res.data.data[0].username)
+            console.log(res.data.data[0].role)
+            setNumber(res.data.data[0].id)
+            setName(res.data.data[0].username)
+            setRole(res.data.data[0].role)
+        })
     });
 
     return (
@@ -24,12 +44,13 @@ function Profile() {
             <div className='flex'>
                 <div className=' p-20 h-full'>
                     <img src={flash} alt='flash' />
-                    <button className='p-5 bg-blue-100 w-full mt-[400px] rounded-full hover:bg-sky-700 '>Logout</button>
+                    <button className='p-5 bg-blue-100 w-full mt-[400px] rounded-full hover:bg-sky-700 ' onClick={logout}>Logout</button>
                 
                 </div>
                 <div className='w-full text-[50px]'>
                     <div className=' w-[50%]  text-center p-20 m-10 '>
-                        Puttipong Panich
+                        {name} <br></br>
+                        Role : {role}
                     </div>
               
                     <div className='flex flex-wrap w-full bg-red-100 h-full'>

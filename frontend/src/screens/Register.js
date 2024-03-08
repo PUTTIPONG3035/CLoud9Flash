@@ -9,15 +9,29 @@ import { useNavigate } from 'react-router-dom';
 function Register() {
 
   const navigate = useNavigate();
-
+  const getRandomNumber = (min, max) => {
+    return Math.floor(Math.random() * (max - min) + min);
+  };
+  const randomNumber = getRandomNumber(1, 100000000);
     const [showLogin, setShowLogin] = useState(true);
   const [showSignup, setShowSignup] = useState(false);
   
 
   //login
-  const [email, setEmail] = useState('');
+  const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [message, setMessage] = useState('');
+ 
+  
+  
+  //register
+   const [id , setId] = useState(0);
+  const [usernameReg, setUsernameReg] = useState('');
+    const [passwordReg, setPasswordReg] = useState('');
+      const [confirmPasswordReg, setConfirmPasswordReg] = useState('');
+  
+  
+  
 
 
   const toggleSections = () => {
@@ -25,22 +39,40 @@ function Register() {
     setShowSignup(!showSignup);
     
   };
+  
+  const register = () =>{
+        setId(randomNumber)
+         const data = {
+      id : id,
+      username : usernameReg,
+      password : passwordReg,
+
+    }
+    axios.post("http://54.237.35.150:3000/register", data).then((res) => {
+      console.log(res.data.message);
+      setMessage(res.data.message);
+      localStorage.setItem('token', usernameReg); 
+      navigate('/profile');
+   
+  })
+  }
 
   const login = () =>{
- 
     console.log("Folk")
     const data = {
-      email : email,
+      id : id,
+      username : username,
       password : password
 
     }
+    
 
     console.log(data)
 
-    axios.post("http://localhost:3000/login", data).then((res) => {
+    axios.post("http://54.237.35.150:3000/login", data).then((res) => {
       console.log(res.data.message);
       setMessage(res.data.message);
-      localStorage.setItem('token', email); 
+      localStorage.setItem('token', username); 
       navigate('/profile');
    
     
@@ -76,7 +108,7 @@ function Register() {
             <div className="bg-white rounded w-full p-10">
               <div className="mb-4">
                 <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="username">Username</label>
-                <input className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="username" type="text" placeholder="Enter your username" onChange={e => setEmail(e.target.value)} />
+                <input className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="username" type="text" placeholder="Enter your username" onChange={e => setUsername(e.target.value)} />
               </div>
               <div className="mb-6">
                 <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="password">Password</label>
@@ -105,18 +137,18 @@ function Register() {
             <div className="bg-white  rounded w-full p-10">
               <div className="mb-4">
                 <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="username">Username</label>
-                <input className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="username" type="text" placeholder="Enter your username" />
+                <input className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="username" type="text" placeholder="Enter your username" onChange={e => setUsernameReg(e.target.value)} />
               </div>
               <div className="mb-2">
                 <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="password">Password</label>
-                <input className="shadow appearance-none border w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" id="password" type="password" placeholder="******************" />
+                <input className="shadow appearance-none border w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" id="password" type="password" placeholder="******************" onChange={e => setPasswordReg(e.target.value)} />
               </div>
               <div className="mb-2">
                 <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="password">Confirm Password</label>
-                <input className="shadow appearance-none border w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" id="password" type="password" placeholder="******************" />
+                <input className="shadow appearance-none border w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" id="password" type="password" placeholder="******************" onChange={e => setConfirmPasswordReg(e.target.value)}/>
               </div>
               <div className="text-center">
-                <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-6 rounded-[50px] focus:outline-none focus:shadow-outline" type="button">Sign Up</button>
+                <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-6 rounded-[50px] focus:outline-none focus:shadow-outline" type="button" onClick={register}>Sign Up</button>
               </div>
             
             </div>
