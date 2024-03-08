@@ -21,6 +21,7 @@ router.get("/",  async function(req, res, next){
 router.post("/login", async (req, res, next) =>{
     const { username, password } = req.body;
     console.log(username)
+        console.log(username)
 
     // Example validation (replace with your actual authentication logic)
     if (username === 'Folk' && password === '1234') {
