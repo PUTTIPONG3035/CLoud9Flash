@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 import '../css/styles.css';
 
 
-function CreateScreen() {
-    const [titleValue, setTitleValue] = useState('Title Flash Card');
-    const [descValue, setDescValue] = useState('Description of your flash card');
+function UpdateScreen() {
+    const [titleValue, setTitleValue] = useState('');
+    const [descValue, setDescValue] = useState('');
     const [numBox, setNumBox] = useState(5)
     const [vocabTranslations, setVocabTranslations] = useState([]);
 
@@ -18,8 +18,29 @@ function CreateScreen() {
     const handleAddInputBox = () => {
         setNumBox(prevNumBox => prevNumBox + 1);
     };
-    const handleCreate = () => {
-        console.log("handleCreate")
+    useEffect(() => {
+        fetchData(5678976567);
+    }, []);
+
+    const fetchData = (flashCardId) => {
+        const url = `http://54.152.43.129:8000/flash/flashcardset/${flashCardId}`;
+
+        fetch(url)
+            .then(response => response.json())
+            .then(data => {
+                // Set fetched data to state
+                setVocabTranslations(data);
+                setTitleValue(data.data.title)
+                setDescValue(data.data.description)
+            })
+            .catch(error => {
+                console.error('Error fetching data:', error);
+            });
+    };
+
+    // update API
+    const handleUpdate = (flashCardId) => {
+        const url = `http://54.152.43.129:8000/flash/flashcardset/${flashCardId}`;
         const data = {
             FlashCardId: 5678976567,
             title: titleValue,
@@ -27,9 +48,8 @@ function CreateScreen() {
             data: vocabTranslations
         };
 
-        // Example of sending a POST request using fetch API
-        fetch('http://54.152.43.129:8000/flash/flashcardset', {
-            method: 'POST',
+        fetch(url, {
+            method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',
             },
@@ -47,17 +67,17 @@ function CreateScreen() {
             });
     };
 
-        const handleVocabChange = (index, value) => {
-            const updatedVocabTranslations = [...vocabTranslations];
-            updatedVocabTranslations[index] = { vocab: value };
-            setVocabTranslations(updatedVocabTranslations);
-        };
+    const handleVocabChange = (index, value) => {
+        const updatedVocabTranslations = [...vocabTranslations];
+        updatedVocabTranslations[index] = { vocab: value };
+        setVocabTranslations(updatedVocabTranslations);
+    };
 
-        const handleTranslationChange = (index, value) => {
-            const updatedVocabTranslations = [...vocabTranslations];
-            updatedVocabTranslations[index] = { ...updatedVocabTranslations[index], translation: value };
-            setVocabTranslations(updatedVocabTranslations)
-        };
+    const handleTranslationChange = (index, value) => {
+        const updatedVocabTranslations = [...vocabTranslations];
+        updatedVocabTranslations[index] = { ...updatedVocabTranslations[index], translation: value };
+        setVocabTranslations(updatedVocabTranslations)
+    };
 
 
     return (
@@ -110,9 +130,9 @@ function CreateScreen() {
                 </tbody>
             </table>
             <button className="Button bg-red-500 px-4 py-2 rounded-lg text-2xl font-semibold text-white mt-10 absolute left-10">CANCEL</button>
-            <button className="Button bg-orange-500 px-4 py-2 rounded-lg text-2xl font-semibold text-white mt-10 absolute right-10" onClick={handleCreate}>CREATE</button>
+            <button className="Button bg-orange-500 px-4 py-2 rounded-lg text-2xl font-semibold text-white mt-10 absolute right-10" onClick={() => handleUpdate(5678976567)}>UPDATE</button>
         </div>
     );
 }
 
-export default CreateScreen;
+export default UpdateScreen;
