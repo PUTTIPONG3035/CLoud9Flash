@@ -43,13 +43,14 @@ function Register() {
   const register = () =>{
         setId(randomNumber)
          const data = {
-      id : id,
-      username : usernameReg,
+           
+      name : usernameReg,
       password : passwordReg,
 
     }
-    axios.post("http://54.237.35.150:3000/register", data).then((res) => {
-      console.log(res.data.message);
+    axios.post("http://52.204.195.112:3000/register", data).then((res) => {
+      
+      console.log("post");
       setMessage(res.data.message);
       localStorage.setItem('token', usernameReg); 
       navigate('/profile');
@@ -60,8 +61,7 @@ function Register() {
   const login = () =>{
     console.log("Folk")
     const data = {
-      id : id,
-      username : username,
+      name : username,
       password : password
 
     }
@@ -69,7 +69,7 @@ function Register() {
 
     console.log(data)
 
-    axios.post("http://54.237.35.150:3000/login", data).then((res) => {
+    axios.post("http://52.204.195.112:3000/login", data).then((res) => {
       console.log(res.data.message);
       setMessage(res.data.message);
       localStorage.setItem('token', username); 

@@ -2,13 +2,16 @@ const dotenv = require('dotenv');
 dotenv.config();
 const AWS = require('aws-sdk');
 
-const AWS_ACCESS_KEY_ID = "ASIAZI2LIWC33P54KHWI"
+const AWS_ACCESS_KEY_ID = "ASIAZI2LIWC3SBEZJNIA"
 
-const AWS_SECRET_ACCESS_KEY = "eVcTFG/a+u15r5WCjw1okLFeq2baI+kfnKK1hFvn"
-const AWS_SESSION_TOKEN=`FwoGZXIvYXdzEL3//////////wEaDBOcrCPrynefbjsbqCLFAaKePzro9i6/9VbY3Wb+PySFh5s7tc2EvHfhoD8vXnfwSeH2ZajEaEstEXTDOlMrBlkP/u5Jib6yvSLIeAExH03+aXvfGvL5kb34uPOuOcytICsQHyC1GEnLLF0xnCNQJbooG6iSSG7YBcNM+xxlfrRVSWfp+DsM8cH6USmxJSx+uo3PFb35EVKhY7eVcK5ZNnkvDlt3Mdnddp/YknBSAUb7OV3vq0ubV3Sjpdlr9TXOc0oeY+Tyo8fsmiSJsZ6lghb2YjzMKN+yoa8GMi1DiUJtuCTfBdhdapuYsWz9VqiNGPyrPBkM9/Pe40b7KYY49TZqr7fXBuA3z2s=`
+const AWS_SECRET_ACCESS_KEY = "X2KUUsAcy961nN1VSLiCQEWV5bRvE3ehmGDJO0bR"
+const AWS_SESSION_TOKEN=`FwoGZXIvYXdzEAAaDIrE4T7ciyucb5thpSLFAdfvcK3NLFihXJKQ4Gn9Pnm3sW1m/Nla5HlY6xRKh8kxms33PPvK03MSPYyKH8pzo224rlx7zN1+GmOUhUk9knIALDn/52ItamobQoIituk5h0UFoL/uhFY375XWBYATYLBTjRXR4+8d8+5beOrcCpthV9xNakd+wVCiYvgcU5Y/ry4HJgAdEFl/4DyObWNVDvty6jO11bdqmPJdYYT0ehJ5CxADGNzqti+vLC3cYf4Fu5ZgLpzxfFvDnR1BDLx3bDYwWu4rKIH9r68GMi3PJnaFK1215dje86oDMSTqoq0vSlxJtYtUGUCqD9bjW5wZ1Ywv6Gf72sqkd1c=`
 const accessKeyId  = AWS_ACCESS_KEY_ID
 const secretAccessKey = AWS_SECRET_ACCESS_KEY
 const sessionToken =  AWS_SESSION_TOKEN
+
+
+
 
 
 
@@ -27,7 +30,7 @@ AWS.config.update({
 
 const db = new AWS.DynamoDB.DocumentClient()
 
-const Table = 'users'
+const Table = 'Users'
 
 
 

@@ -19,12 +19,16 @@ router.get("/",  async function(req, res, next){
 })
 
 router.post("/login", async (req, res, next) =>{
-    const { username, password } = req.body;
-    console.log(username)
-        console.log(username)
+    const { name, password } = req.body;
+ 
+     const { success, data } = await readAllUsers()
+     console.log(data[0].name)
+     
+     const nameDb = data[0].name;
+     const passwordDb = data[0].password;
 
     // Example validation (replace with your actual authentication logic)
-    if (username === 'Folk' && password === '1234') {
+    if (name === nameDb && password === passwordDb) {
         res.json({ message: 'Login successful' });
     } else {
         res.status(401).json({ message: 'Invalid credentials' });
@@ -33,7 +37,7 @@ router.post("/login", async (req, res, next) =>{
 
 
 router.post("/register", async(req, res, next) =>{
-    const { username, password, id } = req.body;
+    const { name, password } = req.body;
     console.log(req.body)
 
     // Example validation (replace with your actual authentication logic)

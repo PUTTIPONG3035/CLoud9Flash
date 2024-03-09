@@ -21,12 +21,12 @@ function Profile() {
 
 
     useEffect(() => {
-        axios.get("http://54.237.35.150:3000").then(res => {
+        axios.get("http://52.204.195.112:3000").then(res => {
             console.log(res.data.data[0].id)
-            console.log(res.data.data[0].username)
+            console.log(res.data.data[0].name)
             console.log(res.data.data[0].role)
             setNumber(res.data.data[0].id)
-            setName(res.data.data[0].username)
+            setName(res.data.data[0].name)
             setRole(res.data.data[0].role)
         })
     });
