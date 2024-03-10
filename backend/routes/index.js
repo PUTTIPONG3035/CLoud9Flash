@@ -3,7 +3,7 @@ const http = require('http');
 const url = require('url');
 const fs = require('fs');
 const bcrypt = require('bcryptjs');
-const  { createOrUpdate, deleteUserById, getUserById, readAllUsers } = require('../db.js');
+const  { createOrUpdate, deleteUserById, getUserById, readAllUsers } = require('../query/db.js');
 
 
 
@@ -22,7 +22,9 @@ router.post("/login", async (req, res, next) =>{
     const { name, password } = req.body;
  
      const { success, data } = await readAllUsers()
-     console.log(data[0].name)
+     
+     console.log(data)
+    //  console.log(data[0].name)
      
      const nameDb = data[0].name;
      const passwordDb = data[0].password;
