@@ -5,6 +5,15 @@ import '../css/landing.css';
 import { Link } from 'react-router-dom';
 
 
+const card = [
+    { id: 1, name: 'Korean I', description: 'Description : Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla consectetur libero eget tellus ultricies.', },
+    { id: 2, name: 'Thai II', description: 'Description : Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla consectetur libero eget tellus ultricies.', },
+    { id: 3, name: 'Eng fundamental', description: 'Description : Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla consectetur libero eget tellus ultricies.', },
+    { id: 4, name: 'Hospital', description: 'Description : Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla consectetur libero eget tellus ultricies.', },
+    { id: 5, name: 'Law', description: 'Description : Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla consectetur libero eget tellus ultricies.', },
+    { id: 6, name: 'Japanese I', description: 'Description : Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla consectetur libero eget tellus ultricies.', },
+]
+
 function HomeScreen() {
 
     return (
@@ -27,8 +36,8 @@ function HomeScreen() {
                     </div>
                 </nav>
             </header>
-            <div className='ShortCut bg-gray2 my-3 mx-auto p-10 rounded-lg flex'>
-                <div className='p-2'>
+            <div className='ShortCut bg-gray2 my-5 mx-auto p-10 rounded-lg flex'>
+                <div className='p-2 text-center'>
                     <img
                         width={600}
                         src="https://deadline.com/wp-content/uploads/2023/06/MCDFLAS_WB022.jpg"
@@ -38,11 +47,11 @@ function HomeScreen() {
                 <div className='flex-col w-3/5'>
                     <div className='flex justify-center'>
                         <div className='text-3xl font-bold '>
-                        My Favourite
+                            My Favourite
+                        </div>
+                        <div className='text-3xl font-bold  text-red-500'>&nbsp;Flash!!</div>
                     </div>
-                    <div className='text-3xl font-bold  text-red-500'>&nbsp;Flash!!</div>
-                    </div>
-                    
+
                     <div>
                         <button className="w-100 bg-blueee px-4 py-2 rounded-lg text-2xl font-semibold text-white m-2 mx-3 w-full">Classroom</button>
                     </div>
@@ -58,41 +67,54 @@ function HomeScreen() {
                 </div>
             </div>
             <div className='flex flex-row'>
-
-                <div className='flex-col w-4/5 m-auto'>
-                    <div className='flex'>
-                        <div className="m-3 bg-yellow shadow-md rounded-lg p-6">
-                            <div className="text-center mt-4">
-                                <h2 className="text-xl font-bold">Title Flash Card</h2>
-                                <p className="text-gray-600">Total flash</p>
-                                <p className="mt-2">Description : Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla consectetur libero eget tellus ultricies.</p>
+                <div className='grid grid-cols-2 w-4/5 m-auto'>
+                    {/* <div className='flex'> */}
+                        {card.map((item, index) => (
+                            <div className="m-3 bg-yellow shadow-md rounded-lg p-6" key={index}>
+                                <div className="text-center mt-4">
+                                    <h2 className="text-xl font-bold">{item.name}</h2>
+                                    <p className="text-gray-600">Total flash</p>
+                                    <p className="mt-2">Description : {item.description}</p>
+                                </div>
                             </div>
-                        </div>
-                        <div className="m-3 bg-yellow shadow-md rounded-lg p-6">
-                            <div className="text-center mt-4">
-                                <h2 className="text-xl font-bold">Title Flash Card</h2>
-                                <p className="text-gray-600">Total flash</p>
-                                <p className="mt-2">Description : Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla consectetur libero eget tellus ultricies.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div className='flex'>
-                        <div className="m-3 bg-yellow shadow-md rounded-lg p-6">
-                            <div className="text-center mt-4">
-                                <h2 className="text-xl font-bold">Title Flash Card</h2>
-                                <p className="text-gray-600">Total flash</p>
-                                <p className="mt-2">Description : Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla consectetur libero eget tellus ultricies.</p>
-                            </div>
-                        </div>
-                        <div className="m-3 bg-yellow shadow-md rounded-lg p-6">
-                            <div className="text-center mt-4">
-                                <h2 className="text-xl font-bold">Title Flash Card</h2>
-                                <p className="text-gray-600">Total flash</p>
-                                <p className="mt-2">Description : Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla consectetur libero eget tellus ultricies.</p>
-                            </div>
-                        </div>
-                    </div>
+                        ))
+                        }
+                    {/* </div> */}
                 </div>
+                {/* <div className='flex-col w-4/5 m-auto'>
+                    <div className='flex'>
+                        <div className="m-3 bg-yellow shadow-md rounded-lg p-6">
+                            <div className="text-center mt-4">
+                                <h2 className="text-xl font-bold">Title Flash Card</h2>
+                                <p className="text-gray-600">Total flash</p>
+                                <p className="mt-2">Description : Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla consectetur libero eget tellus ultricies.</p>
+                            </div>
+                        </div>
+                        <div className="m-3 bg-yellow shadow-md rounded-lg p-6">
+                            <div className="text-center mt-4">
+                                <h2 className="text-xl font-bold">Title Flash Card</h2>
+                                <p className="text-gray-600">Total flash</p>
+                                <p className="mt-2">Description : Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla consectetur libero eget tellus ultricies.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div className='flex'>
+                        <div className="m-3 bg-yellow shadow-md rounded-lg p-6">
+                            <div className="text-center mt-4">
+                                <h2 className="text-xl font-bold">Title Flash Card</h2>
+                                <p className="text-gray-600">Total flash</p>
+                                <p className="mt-2">Description : Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla consectetur libero eget tellus ultricies.</p>
+                            </div>
+                        </div>
+                        <div className="m-3 bg-yellow shadow-md rounded-lg p-6">
+                            <div className="text-center mt-4">
+                                <h2 className="text-xl font-bold">Title Flash Card</h2>
+                                <p className="text-gray-600">Total flash</p>
+                                <p className="mt-2">Description : Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla consectetur libero eget tellus ultricies.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div> */}
             </div>
 
         </div>
