@@ -237,7 +237,7 @@ export default function CardScreen() {
         <div className='text-2xl flex flex-col justify-center'>
           1/10
         </div>
-        <div className='flex w-32'>
+        <div className='flex w-32 justify-end'>
           <IconSquareRoundedArrowLeft size={44}/>
           <IconSquareRoundedArrowRight size={44}/>
         </div>
