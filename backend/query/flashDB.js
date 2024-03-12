@@ -1,9 +1,9 @@
-import {db, FlashCardTable} from '../dynamo'
+const { db, Table } = require('../dynamo.js');
 
 // Create or Update users
 const createOrUpdateFlashCard = async (data = {}) =>{
     const params = {
-        TableName: FlashCardTable,
+        TableName: "FlashCardTable",
         Item: data
     }
     try{
@@ -20,7 +20,7 @@ const createOrUpdateFlashCard = async (data = {}) =>{
 // Read all users
 const readAllFlashCardSet = async()=>{
     const params = {
-        TableName: FlashCardTable
+        TableName:  "FlashCardTable"
     }
 
     try{
@@ -35,7 +35,7 @@ const readAllFlashCardSet = async()=>{
 // Read Users by ID
 const getFlashCardById = async (value, key = 'FlashCardId') => {
     const params = {
-        TableName: FlashCardTable,
+        TableName:  "FlashCardTable",
         Key: {
             [key]: parseInt(value)
         }
@@ -51,7 +51,7 @@ const getFlashCardById = async (value, key = 'FlashCardId') => {
 // Delete User by ID
 const deleteFlashCardById = async(value, key = 'FlashCardId' ) => { 
     const params = {
-        TableName: FlashCardTable,
+        TableName:  "FlashCardTable",
         Key: {
             [key]: parseInt(value)
         }
@@ -67,7 +67,7 @@ const deleteFlashCardById = async(value, key = 'FlashCardId' ) => {
 }
 
 
-export {
+module.exports = {
     createOrUpdateFlashCard,
     readAllFlashCardSet,
     getFlashCardById,

@@ -14,9 +14,11 @@ app.use(express.json())
 app.use(bodyParser.urlencoded({ extended: true}))
 
 const indexRouter = require('./routes/index')
+const cardRouter = require("./routes/card")
 
 
 app.use(indexRouter.router)
+app.use(cardRouter.router)
 
 
 app.listen(3000, () => {
