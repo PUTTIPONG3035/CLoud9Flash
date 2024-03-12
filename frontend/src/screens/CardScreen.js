@@ -34,7 +34,7 @@ export default function CardScreen() {
     } else {
       setWord('Classroom');
     }
-  }  
+  }
 
   return (
     <div style={{ backgroundColor: '#ECF0F1', height: '100vh' }}>
@@ -121,7 +121,7 @@ export default function CardScreen() {
             <a href='#' className='text-white mx-4'>
               How to Play
             </a>
-            <IconUserSquareRounded className="text-white"/>
+            <IconUserSquareRounded className="text-white" />
             {/* <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
             Log in <span aria-hidden="true">&rarr;</span>
           </a> */}
@@ -208,8 +208,8 @@ export default function CardScreen() {
           </Dialog.Panel>
         </Dialog> */}
       </header>
-      <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: '70vh' }} >
-        <Card sx={{ minWidth: '50%', height: 600, borderRadius: '20px' }} onClick={() => handleClick()}>
+      <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }} >
+        <Card className="max-w-screen-lg w-full mx-auto !rounded-3xl min-h-[60vh] max-h-[80vh] my-10" onClick={() => handleClick()}>
           <CardContent style={{ textAlign: 'center' }}>
             <Typography gutterBottom variant="h1" component="div" >
               {word}
@@ -223,21 +223,25 @@ export default function CardScreen() {
               objectFit: 'cover',
               marginX: 'auto'
             }}
-            image="https://cdn.discordapp.com/attachments/882306005772427284/1211225320233902100/Photo_on_4-6-2566_BE_at_15.32.jpg?ex=65ed6c7b&is=65daf77b&hm=4ee669d1a0bcbfa95c2994a14c69e5a03e3630ed632308e3ce2702b51740a93d&"
+            image="https://cdn.discordapp.com/attachments/882306005772427284/1215723230048944148/IMG_6180.png?ex=65fdc97d&is=65eb547d&hm=fd867b59570dcd01421b2f879f83a81156087df161d178c82c34af0468e3c8ca&"
             alt="classroom"
           />
 
         </Card>
       </div>
-      <div style={{ width: '100%', display: 'flex', flexDirection: 'row', justifyContent: 'center', textAlign: 'center' }}>
+      <div className='max-w-screen-lg w-full mx-auto flex justify-between text-center'>
         <Link to="/Overview">
-          <IconSquareRoundedX />
+          {/* //ไอคอนเป็นข้อความต้องใช้ขนาดของtextแต่ก็ไม่ทุกอัน */}
+            <IconSquareRoundedX size={36}/>
         </Link>
-        <Typography>
+        <Typography variant="h5">
           1/10
         </Typography>
-        <IconSquareRoundedArrowLeft />
-        <IconSquareRoundedArrowRight />
+        <div className='flex'>
+          <IconSquareRoundedArrowLeft size={36}/>
+          <IconSquareRoundedArrowRight size={36}/>
+        </div>
+
       </div>
     </div>
   )
