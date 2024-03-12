@@ -81,19 +81,19 @@ export default function Overview() {
       <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
         <Card sx={{ minWidth: '50%', height: 300, backgroundColor: '#3498DB', borderRadius: '20px', marginTop: '50px' }}>
           <CardContent style={{ textAlign: 'center' }}>
-            <Typography gutterBottom variant="h1" component="div" >
+            <div className='text-8xl font-semibold' >
               School
-            </Typography>
+            </div>
             <div style={{ display: 'flex', flexDirection: 'row', width: '100%', justifyContent: 'center' }}>
-              <IconStarFilled className='text-yellow-400' />
+              <IconStarFilled className='text-yellow' />
               <IconStar />
               <IconStar />
               <IconStar />
               <IconStar />
             </div>
-
+            <div className='text-2xl mt-10'>ชุดการ์ดฝึกคำศัพท์พื้นฐานภายในโรงเรียน</div>
             <Link to="/Card">
-              <IconPlayerPlayFilled style={{ width: '100%', marginTop: 40 }} size={40} />
+              <IconPlayerPlayFilled style={{ width: '100%', marginTop: 20 }} size={40} />
             </Link>
           </CardContent>
           {/* <CardMedia
