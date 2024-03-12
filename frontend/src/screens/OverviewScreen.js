@@ -237,7 +237,7 @@ export default function Overview() {
               School
             </Typography>
             <div style={{ display: 'flex', flexDirection: 'row', width: '100%', justifyContent: 'center' }}>
-              <IconStarFilled />
+              <IconStarFilled className='text-yellow-400'/>
               <IconStar />
               <IconStar />
               <IconStar />
@@ -245,7 +245,7 @@ export default function Overview() {
             </div>
 
             <Link to="/Card">
-              <IconPlayerPlayFilled style={{ width: '100%', marginTop: 40 }} />
+              <IconPlayerPlayFilled style={{ width: '100%', marginTop: 40 }} size={40} />
             </Link>
           </CardContent>
           {/* <CardMedia
