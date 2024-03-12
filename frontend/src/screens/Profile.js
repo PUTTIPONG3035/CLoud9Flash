@@ -63,35 +63,36 @@ function Profile() {
             </div> */}
 
             <div className='flex'>
-                <div className=' p-20 h-full'>
-                    <img src={flash} alt='flash' />
-                    <button className='p-5 bg-blue-100 w-full mt-[400px] rounded-full hover:bg-sky-700 ' onClick={logout}>Logout</button>
+                <div className='p-20 h-full'>
+                    <img src={flash} className="border-double border-4 border-sky-500" alt='flash' />
+                    <button className='p-5 bg-blue-100 w-full mt-10 rounded-full hover:bg-sky-700 ' onClick={logout}>Logout</button>
 
                 </div>
-                <div className='w-full text-[50px]'>
-                    <div className=' w-[50%]  text-center p-20 m-10 '>
+                <div className='w-full text-4xl font-semibold'>
+                    <div className=' w-[50%]  text-left py-20 my-10'>
                         {name} <br></br>
                         Role : {role}
                     </div>
 
-                    <div className='flex flex-wrap w-full bg-red-100 h-full'>
-                        <div className='w-2/6 '>
-                            <div className='m-10 bg-red-500 flex justify-center items-center h-5/6 hover:bg-blue-100'>
+                    <div className='my-8 text-left text-3xl font-medium'>Your Flash Cards</div>
+                    <div className='w-3/4 bg-red-100 mb-20 pb-14 grid grid-cols-2'>
+                        <div className='w-full'>
+                            <div className='m-14 bg-red-500 flex justify-center items-center h-5/6 hover:bg-blue-100'>
                                 <img src={flash} alt='flash' />
                             </div>
                         </div>
-                        <div className='w-2/6'>
-                            <div className='m-10 bg-red-500 flex justify-center items-center h-5/6'>
+                        <div className='w-full'>
+                            <div className='m-14 bg-red-500 flex justify-center items-center h-5/6 hover:bg-blue-100'>
                                 <img src={flash} alt='flash' />
                             </div>
                         </div>
-                        <div className='w-2/6'>
-                            <div className='m-10 bg-red-500 flex justify-center items-center h-5/6'>
+                        <div className='w-full'>
+                            <div className='m-14 bg-red-500 flex justify-center items-center h-5/6 hover:bg-blue-100'>
                                 <img src={flash} alt='flash' />
                             </div>
                         </div>
-                        <div className='w-2/6'>
-                            <div className='m-10 bg-red-500 flex justify-center items-center h-5/6'>
+                        <div className='w-full'>
+                            <div className='m-14 bg-red-500 flex justify-center items-center h-5/6 hover:bg-blue-100'>
                                 <img src={flash} alt='flash' />
                             </div>
                         </div>
