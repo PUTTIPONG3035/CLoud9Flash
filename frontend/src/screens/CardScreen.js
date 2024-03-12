@@ -118,10 +118,10 @@ export default function CardScreen() {
             </a>
           </Popover.Group> */}
           <div className="hidden lg:flex lg:flex-1 lg:justify-end ">
-            <a href='#' className='text-white mx-4'>
+            <a href='#' className='text-white mx-4 my-auto'>
               How to Play
             </a>
-            <IconUserSquareRounded className="text-white" />
+            <IconUserSquareRounded className="text-white " size={36}/>
             {/* <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
             Log in <span aria-hidden="true">&rarr;</span>
           </a> */}
