@@ -20,18 +20,6 @@ import Typography from '@mui/material/Typography';
 import { Link } from 'react-router-dom';
 
 
-const products = [
-  { name: 'Analytics', description: 'Get a better understanding of your traffic', href: '#', icon: ChartPieIcon },
-  { name: 'Engagement', description: 'Speak directly to your customers', href: '#', icon: CursorArrowRaysIcon },
-  { name: 'Security', description: 'Your customers’ data will be safe and secure', href: '#', icon: FingerPrintIcon },
-  { name: 'Integrations', description: 'Connect with third-party tools', href: '#', icon: SquaresPlusIcon },
-  { name: 'Automations', description: 'Build strategic funnels that will convert', href: '#', icon: ArrowPathIcon },
-]
-const callsToAction = [
-  { name: 'Watch demo', href: '#', icon: PlayCircleIcon },
-  { name: 'Contact sales', href: '#', icon: PhoneIcon },
-]
-
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
 }
@@ -46,19 +34,18 @@ export default function CardScreen() {
     } else {
       setWord('Classroom');
     }
-  }  
+  }
 
   return (
     <div style={{ backgroundColor: '#ECF0F1', height: '100vh' }}>
-      <header className="bg-white">
+      <header className="bg-midblack">
         <nav className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8" aria-label="Global">
           <div className="flex lg:flex-1">
-            <a href="#" className="-m-1.5 p-1.5">
-              <span className="sr-only">Your Company</span>
+            <Link to="/home">
               <img className="h-8 w-auto" src="https://cdn.discordapp.com/attachments/915609670587125760/1211220519928602704/the-flash-high-resolution-logo-transparent.png?ex=65ed6803&is=65daf303&hm=2799cb3aa0c0b01887ead34822d7c42ec006a2ef9287cd1120b1528b4c13680f&" alt="" />
-            </a>
+            </Link>
           </div>
-          <div className="flex lg:hidden">
+          {/* <div className="flex lg:hidden">
             <button
               type="button"
               className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700"
@@ -67,8 +54,8 @@ export default function CardScreen() {
               <span className="sr-only">Open main menu</span>
               <Bars3Icon className="h-6 w-6" aria-hidden="true" />
             </button>
-          </div>
-          <Popover.Group className="hidden lg:flex lg:gap-x-12">
+          </div> */}
+          {/* <Popover.Group className="hidden lg:flex lg:gap-x-12">
             <Popover className="relative">
               <Popover.Button className="flex items-center gap-x-1 text-sm font-semibold leading-6 text-gray-900">
                 Product
@@ -129,15 +116,18 @@ export default function CardScreen() {
             <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
               Company
             </a>
-          </Popover.Group>
-          <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-            <IconUserSquareRounded />
+          </Popover.Group> */}
+          <div className="hidden lg:flex lg:flex-1 lg:justify-end ">
+            <a href='#' className='text-white mx-4 my-auto'>
+              How to Play
+            </a>
+            <IconUserSquareRounded className="text-white " size={36}/>
             {/* <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
             Log in <span aria-hidden="true">&rarr;</span>
           </a> */}
           </div>
         </nav>
-        <Dialog as="div" className="lg:hidden" open={mobileMenuOpen} onClose={setMobileMenuOpen}>
+        {/* <Dialog as="div" className="lg:hidden" open={mobileMenuOpen} onClose={setMobileMenuOpen}>
           <div className="fixed inset-0 z-10" />
           <Dialog.Panel className="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
             <div className="flex items-center justify-between">
@@ -216,10 +206,10 @@ export default function CardScreen() {
               </div>
             </div>
           </Dialog.Panel>
-        </Dialog>
+        </Dialog> */}
       </header>
-      <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: '70vh' }} >
-        <Card sx={{ minWidth: '50%', height: 600, borderRadius: '20px' }} onClick={() => handleClick()}>
+      <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }} >
+        <Card className="max-w-screen-lg w-full mx-auto !rounded-3xl min-h-[60vh] max-h-[80vh] my-10" onClick={() => handleClick()}>
           <CardContent style={{ textAlign: 'center' }}>
             <Typography gutterBottom variant="h1" component="div" >
               {word}
@@ -233,21 +223,25 @@ export default function CardScreen() {
               objectFit: 'cover',
               marginX: 'auto'
             }}
-            image="https://cdn.discordapp.com/attachments/882306005772427284/1211225320233902100/Photo_on_4-6-2566_BE_at_15.32.jpg?ex=65ed6c7b&is=65daf77b&hm=4ee669d1a0bcbfa95c2994a14c69e5a03e3630ed632308e3ce2702b51740a93d&"
+            image="https://modelteaching.com/wp-content/uploads/2019/04/Classroom-Procedures-min.jpg"
             alt="classroom"
           />
 
         </Card>
       </div>
-      <div style={{ width: '100%', display: 'flex', flexDirection: 'row', justifyContent: 'center', textAlign: 'center' }}>
-        <Link to="/Overview">
-          <IconSquareRoundedX />
+      <div className='max-w-screen-lg w-full mx-auto flex justify-between text-center'>
+        <Link to="/Overview" className='w-32'>
+          {/* //ไอคอนเป็นข้อความต้องใช้ขนาดของtextแต่ก็ไม่ทุกอัน */}
+            <IconSquareRoundedX size={60} stroke={1} color='#E74B3C'/>
         </Link>
-        <Typography>
+        <div className='text-4xl flex flex-col justify-center'>
           1/10
-        </Typography>
-        <IconSquareRoundedArrowLeft />
-        <IconSquareRoundedArrowRight />
+        </div>
+        <div className='flex w-32 justify-end'>
+          <IconSquareRoundedArrowLeft size={60} stroke={1}/>
+          <IconSquareRoundedArrowRight size={60} stroke={1}/>
+        </div>
+
       </div>
     </div>
   )
