@@ -1,3 +1,4 @@
+const defaultTheme = require('tailwindcss/defaultTheme')
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
@@ -7,7 +8,10 @@ module.exports = {
     extend: {
       colors: {
         'midblack': '#1E1E1E'
-      }
+      },
+      fontFamily: {
+        sans: ['IBM Plex Sans Thai', ...defaultTheme.fontFamily.sans],
+      },
     },
   },
   plugins: [],
