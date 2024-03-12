@@ -223,23 +223,23 @@ export default function CardScreen() {
               objectFit: 'cover',
               marginX: 'auto'
             }}
-            image="https://cdn.discordapp.com/attachments/882306005772427284/1215723230048944148/IMG_6180.png?ex=65fdc97d&is=65eb547d&hm=fd867b59570dcd01421b2f879f83a81156087df161d178c82c34af0468e3c8ca&"
+            image="https://modelteaching.com/wp-content/uploads/2019/04/Classroom-Procedures-min.jpg"
             alt="classroom"
           />
 
         </Card>
       </div>
       <div className='max-w-screen-lg w-full mx-auto flex justify-between text-center'>
-        <Link to="/Overview">
+        <Link to="/Overview" className='w-32'>
           {/* //ไอคอนเป็นข้อความต้องใช้ขนาดของtextแต่ก็ไม่ทุกอัน */}
-            <IconSquareRoundedX size={36}/>
+            <IconSquareRoundedX size={44}/>
         </Link>
-        <Typography variant="h5">
+        <div className='text-2xl flex flex-col justify-center'>
           1/10
-        </Typography>
-        <div className='flex'>
-          <IconSquareRoundedArrowLeft size={36}/>
-          <IconSquareRoundedArrowRight size={36}/>
+        </div>
+        <div className='flex w-32'>
+          <IconSquareRoundedArrowLeft size={44}/>
+          <IconSquareRoundedArrowRight size={44}/>
         </div>
 
       </div>
