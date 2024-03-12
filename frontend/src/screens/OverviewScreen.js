@@ -10,16 +10,14 @@ import {
   XMarkIcon,
 } from '@heroicons/react/24/outline'
 import { ChevronDownIcon, PhoneIcon, PlayCircleIcon } from '@heroicons/react/20/solid'
-import { IconUserSquareRounded, IconPlayerPlayFilled, IconStarFilled, IconStar, IconSend2 } from '@tabler/icons-react';
+import { IconUserSquareRounded, IconPlayerPlayFilled, IconStarFilled, IconStar } from '@tabler/icons-react';
 import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
-import TextField from '@mui/material/TextField';
 import { Link } from 'react-router-dom';
-
 
 const products = [
   { name: 'Analytics', description: 'Get a better understanding of your traffic', href: '#', icon: ChartPieIcon },
@@ -38,19 +36,9 @@ const comments = [
   { name: 'ari', word: 'ดีค่า' },
   { name: 'ari', word: 'ดีค่า' },
   { name: 'ari', word: 'ดีค่า' },
-  { name: 'ari', word: 'ดีค่า' },
-  { name: 'ari', word: 'ดีค่า' },
-  { name: 'ari', word: 'ดีค่า' },
-  { name: 'ari', word: 'ดีค่า' },
-  { name: 'ari', word: 'ดีค่า' },
-  { name: 'ari', word: 'ดีค่า' },
 ]
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
-}
-
-function handledSubmit() {
-  console.log('submit')
 }
 
 export default function Overview() {
@@ -261,40 +249,51 @@ export default function Overview() {
         </Card>
       </div>
       <div style={{ display: 'flex', justifyContent: 'center' }}>
-        <Card sx={{ width: '45%', height: '100vh', borderRadius: '20px', marginBottom: '50px' }}>
+        <Card sx={{ width: '45%', height: 600, borderRadius: '20px', marginBottom: '50px' }}>
           <CardContent style={{ textAlign: 'left' }}>
             <Typography gutterBottom variant="h6" component="div" >
               comments
             </Typography>
-            <div style={{ display: 'flex', justifyContent: 'center', flexDirection: 'column' }}>
-              <Card sx={{ width: '95%', height: '80vh', borderRadius: '20px', marginBottom: '20px', backgroundColor: '#ECF0F1', overflowY: 'auto' }}>
+            <div style={{ display: 'flex', justifyContent: 'center' }}>
+              <Card sx={{ width: '95%', height: 500, borderRadius: '20px', marginBottom: '50px', backgroundColor: '#ECF0F1' }}>
                 <CardContent style={{ textAlign: 'left' }}>
-                  {comments.map((item) => (
-                    <div style={{ backgroundColor: '#BDBDBD', padding: '5px', margin: '5px', borderRadius: '10px' }}>
+                 {comments.map((item) => (
+                    <div style={{backgroundColor: '#BDBDBD', padding: '5px', margin: '5px' , borderRadius: '10px'}}>
                       <Typography component="div" >
                         {item.name}
                       </Typography>
                       <Typography gutterBottom variant="h6" component="div" style={{}} >
-                        {item.word}
+                      {item.word}
                       </Typography>
                     </div>
                   ))}
                 </CardContent>
               </Card>
-              <div style={{ padding: '5px', margin: '5px' }}>
-                <Typography component="div" >
-                  Yuki
-                </Typography>
-                <div>
-                  <TextField label="say something" variant="standard" id="fullWidth" style={{ width: '90%' }} />
-                  <Button variant="contained" onClick={handledSubmit}><IconSend2 /></Button>
-                </div>
-
-              </div>
             </div>
           </CardContent>
         </Card>
       </div>
+      {/* <div style={{ display: 'flex', justifyContent: 'center', minHeight: '70vh' }}>
+        <Card sx={{ minWidth: '50%', height: 600 , borderRadius: '20px' }}>
+          <CardContent style={{ textAlign: 'left' }}>
+            <Typography gutterBottom variant="h6" component="div" >
+              comments
+            </Typography>
+          </CardContent> */}
+      {/* <CardMedia
+            component="img"
+            sx={{
+              height: '70%',
+              width: '80%',
+              objectFit: 'cover',
+              marginX: 'auto'
+            }}
+            image="https://cdn.discordapp.com/attachments/882306005772427284/1211225320233902100/Photo_on_4-6-2566_BE_at_15.32.jpg?ex=65ed6c7b&is=65daf77b&hm=4ee669d1a0bcbfa95c2994a14c69e5a03e3630ed632308e3ce2702b51740a93d&"
+            alt="classroom"
+          /> */}
+
+      {/* </Card>
+      </div> */}
     </div>
   )
 }

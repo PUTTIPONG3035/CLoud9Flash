@@ -1,9 +1,15 @@
 import React, { useState } from 'react';
+import axios from 'axios'
 
 import '../css/styles.css';
+import { useNavigate } from 'react-router-dom';
+import { v4 as uuidv4 } from 'uuid';
+
 
 
 function CreateScreen() {
+      const navigate = useNavigate();
+      const randomId = uuidv4();
     const [titleValue, setTitleValue] = useState('Title Flash Card');
     const [descValue, setDescValue] = useState('Description of your flash card');
     const [numBox, setNumBox] = useState(5)
@@ -21,29 +27,21 @@ function CreateScreen() {
     const handleCreate = () => {
         console.log("handleCreate")
         const data = {
-            FlashCardId: 5678976567,
+            FlashCardId: randomId,
             title: titleValue,
             description: descValue,
             data: vocabTranslations
         };
 
         // Example of sending a POST request using fetch API
-        fetch('http://54.152.43.129:8000/flash/flashcardset', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(data),
-        })
+       axios.post('http://52.204.195.112:3000/flashcardset', data)
             .then(response => {
-                if (response.ok) {
-                    console.log("success")
-                } else {
-                    console.log("fail")
-                }
+                console.log("success");
+                   navigate('/home');
+                
             })
             .catch(error => {
-                console.log("fail")
+                console.error("Error:", error);
             });
     };
 

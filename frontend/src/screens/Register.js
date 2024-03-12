@@ -50,7 +50,7 @@ function Register() {
     }
     axios.post("http://52.204.195.112:3000/register", data).then((res) => {
       
-      console.log("post");
+      console.log(res.data.message);
       setMessage(res.data.message);
       localStorage.setItem('token', usernameReg); 
       navigate('/profile');
@@ -67,7 +67,7 @@ function Register() {
     }
     
 
-    console.log(data)
+    console.log(username)
 
     axios.post("http://52.204.195.112:3000/login", data).then((res) => {
       console.log(res.data.message);

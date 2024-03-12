@@ -1,9 +1,7 @@
-import express from 'express'
-import { 
-    createOrUpdateFlashCard,
-    readAllFlashCardSet,
-    getFlashCardById,
-    deleteFlashCardById } from '../query/flashDB.js'
+const express = require("express");
+
+    
+const  { createOrUpdateFlashCard, deleteFlashCardById, getFlashCardById, readAllFlashCardSet } = require('../query/flashDB.js');
 
 const router = express.Router()
 
@@ -72,4 +70,4 @@ router.delete('/flashcardset/:id', async (req, res) => {
 
 
 
-export default router
+exports.router = router;
