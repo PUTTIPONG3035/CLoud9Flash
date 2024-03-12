@@ -3,7 +3,7 @@ import { IconUserSquareRounded } from '@tabler/icons-react';
 import flash from '../image/image 7.png';
 import logo from '../image/logoflash.png';
 import axios from 'axios'
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 
 
 function Profile() {
@@ -21,16 +21,16 @@ function Profile() {
     }
 
 
-    // useEffect(() => {
-    //     axios.get("http://52.204.195.112:3000").then(res => {
-    //         console.log(res.data.data[0].id)
-    //         console.log(res.data.data[0].name)
-    //         console.log(res.data.data[0].role)
-    //         setNumber(res.data.data[0].id)
-    //         setName(res.data.data[0].name)
-    //         setRole(res.data.data[0].role)
-    //     })
-    // });
+    useEffect(() => {
+        axios.get("http://52.204.195.112:3000").then(res => {
+            console.log(res.data.data[0].id)
+            console.log(res.data.data[0].name)
+            console.log(res.data.data[0].role)
+            setNumber(res.data.data[0].id)
+            setName(res.data.data[0].name)
+            setRole(res.data.data[0].role)
+        })
+    });
 
     return (
         <div className='h-screen'>
@@ -38,9 +38,9 @@ function Profile() {
             <header className="bg-midblack">
                 <nav className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8" aria-label="Global">
                     <div className="flex lg:flex-1">
-                        <a href="#" className="-m-1.5 p-1.5">
+                        <Link to="/home">
                             <img className="h-8 w-auto" src="https://cdn.discordapp.com/attachments/915609670587125760/1211220519928602704/the-flash-high-resolution-logo-transparent.png?ex=65ed6803&is=65daf303&hm=2799cb3aa0c0b01887ead34822d7c42ec006a2ef9287cd1120b1528b4c13680f&" alt="" />
-                        </a>
+                        </Link>
                     </div>
                     <div className="hidden lg:flex lg:flex-1 lg:justify-end ">
                         <a href='#' className='text-white mx-4 my-auto'>

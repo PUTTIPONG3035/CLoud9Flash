@@ -41,9 +41,9 @@ export default function CardScreen() {
       <header className="bg-midblack">
         <nav className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8" aria-label="Global">
           <div className="flex lg:flex-1">
-            <a href="#" className="-m-1.5 p-1.5">
+            <Link to="/home">
               <img className="h-8 w-auto" src="https://cdn.discordapp.com/attachments/915609670587125760/1211220519928602704/the-flash-high-resolution-logo-transparent.png?ex=65ed6803&is=65daf303&hm=2799cb3aa0c0b01887ead34822d7c42ec006a2ef9287cd1120b1528b4c13680f&" alt="" />
-            </a>
+            </Link>
           </div>
           {/* <div className="flex lg:hidden">
             <button
@@ -232,14 +232,14 @@ export default function CardScreen() {
       <div className='max-w-screen-lg w-full mx-auto flex justify-between text-center'>
         <Link to="/Overview" className='w-32'>
           {/* //ไอคอนเป็นข้อความต้องใช้ขนาดของtextแต่ก็ไม่ทุกอัน */}
-            <IconSquareRoundedX size={44}/>
+            <IconSquareRoundedX size={60} stroke={1} color='#E74B3C'/>
         </Link>
-        <div className='text-2xl flex flex-col justify-center'>
+        <div className='text-4xl flex flex-col justify-center'>
           1/10
         </div>
         <div className='flex w-32 justify-end'>
-          <IconSquareRoundedArrowLeft size={44}/>
-          <IconSquareRoundedArrowRight size={44}/>
+          <IconSquareRoundedArrowLeft size={60} stroke={1}/>
+          <IconSquareRoundedArrowRight size={60} stroke={1}/>
         </div>
 
       </div>
